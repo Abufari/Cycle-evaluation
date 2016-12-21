@@ -1,4 +1,4 @@
-   No.   	Time N (s)	Depth N (µm)	Force N (mN)
+   No.   	Time N (s)	Depth N (Âµm)	Force N (mN)
     1	    0.109	     0.00878	     0.15124	1	Find Surface
     2	    0.608	    -0.00264	     0.07661
     3	    0.905	    -0.00012	     0.05072
