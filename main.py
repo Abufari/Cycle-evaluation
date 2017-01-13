@@ -44,14 +44,8 @@ def make_lists_and_plot(xarr, yarr, name, plot_energies: bool, savetxt: bool,
         for directory in ['elastic', 'plastic', 'friction', 'plastic_total']:
             if not os.path.exists(os.path.join(dest, directory, '')):
                 os.makedirs(os.path.join(dest, directory))
-        np.savetxt(os.path.join(dest, 'elastic', '') + name +
-                   '.txt', np.transpose([x_grid, elastic]), '%.2f')
-        np.savetxt(os.path.join(dest, 'plastic/', '') + name +
-                   '.txt', np.transpose([x_grid, plastic]), '%.2f')
-        np.savetxt(os.path.join(dest, 'friction/', '') + name +
-                   '.txt', np.transpose([x_grid, friction]), '%.2f')
-        np.savetxt(os.path.join(dest, 'plastic_total/', '') + name +
-                   '.txt', np.transpose([x_grid, plastic_total]), '%.2f')
+            np.savetxt(os.path.join(dest, directory, '') + name +
+                   '.txt', np.transpose([x_grid, eval(directory)]), '%.2f')
     # plot energies as pdf
     if plot_energies:
         plot(x_grid, elastic, plastic, friction, plastic_total,
